@@ -1,12 +1,13 @@
 {
-  "name": "webapp",
-  "version": "1.0.0",
+  "name": "@project/webapp",
+  "version": "0.0.0",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=8080 npx serve",
-    "start": "webpack serve --open --mode development",
-    "start:live": "webpack serve --open --mode development --live-reload --hot"
+    "develop": "webpack serve --open --mode development",
+    "start:live": "webpack serve --open --mode development --live-reload --hot",
+    "watch": "webpack --watch"
   },
   "license": "MIT",
   "author": {
@@ -32,6 +33,8 @@
   "dependencies": {
     "@babel/runtime": "^7.13.10",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "@project/ui-components":"0.0.0",
+    "@project/app-services":"0.0.0"
   }
 }

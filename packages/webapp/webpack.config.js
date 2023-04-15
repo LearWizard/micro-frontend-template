@@ -1,10 +1,22 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
+const path = require("path")
 const deps = require("./package.json").dependencies;
 module.exports = {
+  mode: 'production',
+  entry:{
+    //where to start code execution
+   index: "./src/index.js"
+  },
+  //tells webpack to show error files correctly helps in debugging
+  devtool: 'inline-source-map',
   output: {
+    //file to which it has to generate bundiled code
+    filename: 'main.bundle.js',
     publicPath: "http://localhost:8080/",
+    path: path.resolve(__dirname, 'dist'),
+     clean: true,
+
   },
 
   resolve: {
@@ -12,7 +24,9 @@ module.exports = {
   },
 
   devServer: {
+    //automatically refreshes page after doing changes
     port: 8080,
+    static: './dist',
     historyApiFallback: true,
   },
 
@@ -40,25 +54,10 @@ module.exports = {
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: "webapp",
-      filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
-      shared: {
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-        },
-      },
-    }),
+
     new HtmlWebPackPlugin({
       template: "./src/index.html",
+      title: "Development",
     }),
   ],
 };

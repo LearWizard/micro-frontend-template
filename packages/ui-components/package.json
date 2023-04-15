@@ -1,0 +1,11 @@
+{
+  "name": "@project/ui-components",
+  "version": "0.0.0",
+  "description": "custom components should be written here",
+  "author": "harsha",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+
+  }
+}
