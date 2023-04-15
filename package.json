@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "develop:webapp":"yarn workspace @project/webapp develop",
-    "build:webapp":"yarn workspace @project/webapp build"
+    "build:webapp":"yarn workspace @project/webapp build",
+    "prod:webapp":"yarn workspace @project/webapp build:start"
   }
 }
