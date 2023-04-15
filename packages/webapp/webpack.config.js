@@ -50,7 +50,23 @@ module.exports = {
   },
 
   plugins: [
-
+    new ModuleFederationPlugin({
+      name: "webapp",
+      filename: "remoteEntry.js",
+      remotes: {},
+      exposes: {},
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
+    }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       title: "Development",
