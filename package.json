@@ -2,7 +2,6 @@
   "name": "micro-frontend-template",
   "version": "0.0.0",
   "description": "template for micro-front-end",
-  "main": "index.js",
   "repository": "https://github.com/LearWizard/micro-frontend-template.git",
   "author": "sriharshagodavarthi99@gmail.com",
   "license": "MIT",
