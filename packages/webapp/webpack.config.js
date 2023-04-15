@@ -4,10 +4,6 @@ const path = require("path")
 const deps = require("./package.json").dependencies;
 module.exports = {
   mode: 'production',
-  entry:{
-    //where to start code execution
-   index: "./src/index.js"
-  },
   //tells webpack to show error files correctly helps in debugging
   devtool: 'inline-source-map',
   output: {
